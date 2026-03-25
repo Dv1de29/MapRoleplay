@@ -1,0 +1,86 @@
+/* Menu Option Button Color */
+.btn-political {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #93c5fd;
+}
+.btn-political:hover {
+    background-color: rgba(59, 130, 246, 0.3);
+}
+
+.political-menu-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: white;
+    flex: 1;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+/* .political-menu-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+} */
+
+.countries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.country-row {
+    flex-shrink: 0; /* Prevents the row from getting squished by flexbox */
+    min-height: 56px; /* Explicit minimum height for custom fonts */
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.country-row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.country-initial {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 6px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.country-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    line-height: 1.5; /* Provides enough breathing room for custom font ascenders */
+    padding-top: 4px; /* Slight offset to ensure top of text isn't clipped by container boundaries */
+}
+
+.country-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.country-player {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}

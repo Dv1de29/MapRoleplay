@@ -1,0 +1,167 @@
+.country-selector-container {
+    background-color: #1a1a24;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 320px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cs-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cs-icon-wrapper {
+    background-color: #1b263b;
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cs-header h2 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cs-search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cs-search-box .search-icon {
+    position: absolute;
+    left: 14px;
+}
+
+.cs-search-box input {
+    width: 100%;
+    background-color: #222230;
+    border: 1px solid #2d2d3d;
+    border-radius: 8px;
+    padding: 12px 12px 12px 40px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.cs-search-box input:focus {
+    border-color: #4a4a6a;
+}
+
+.cs-search-box input::placeholder {
+    color: #8e8e9f;
+}
+
+.cs-current-region {
+    background-color: #1e1e2a;
+    border: 1px solid #2d2d3d;
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+}
+
+.cs-watermark {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    letter-spacing: -2px;
+}
+
+.cs-region-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    z-index: 1;
+    margin-left: 30px;
+}
+
+.cs-label {
+    color: #8e8e9f;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.cs-value {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cs-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #222230;
+    border: 1px solid #2d2d3d;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 0;
+    list-style: none;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom Scrollbar for Dropdown */
+.cs-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cs-dropdown::-webkit-scrollbar-track {
+    background: #1e1e2a; 
+    border-radius: 8px;
+}
+
+.cs-dropdown::-webkit-scrollbar-thumb {
+    background: #4a4a6a; 
+    border-radius: 8px;
+}
+
+.cs-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #6082B6; 
+}
+
+.cs-dropdown-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s;
+    font-size: 0.95rem;
+}
+
+.cs-dropdown-item:hover {
+    background-color: #2d2d3d;
+}
+
+.cs-dropdown-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}

@@ -1,0 +1,108 @@
+.alliance-menu-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: white;
+    flex: 1;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+.alliance-menu-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.alliances-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.alliance-empty-state {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.alliance-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+
+.alliance-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.alliance-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    margin-right: 15px;
+    flex-shrink: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.alliance-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.alliance-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Menu Option Button Color */
+.btn-alliance {
+    background-color: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #fcd34d;
+}
+
+.btn-alliance:hover {
+    background-color: rgba(245, 158, 11, 0.3);
+}
+
+.dissolve-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: rgba(239, 68, 68, 0.6);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.dissolve-btn:hover {
+    color: rgba(239, 68, 68, 1);
+    background-color: rgba(239, 68, 68, 0.15);
+}
+
+.dissolve-btn svg {
+    width: 20px;
+    height: 20px;
+}

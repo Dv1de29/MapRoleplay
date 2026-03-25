@@ -1,0 +1,1 @@
+After completing a turn, we can have a food calculated based on arable capacity multiplied by a value of MAYBE tehnology

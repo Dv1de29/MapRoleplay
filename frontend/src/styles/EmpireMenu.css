@@ -1,0 +1,144 @@
+/* Menu Option Button Color */
+.btn-empire {
+    background-color: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #c4b5fd;
+}
+
+.btn-empire:hover {
+    background-color: rgba(139, 92, 246, 0.3);
+}
+
+.empire-menu-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.empire-header {
+    flex-shrink: 0;
+}
+
+.empire-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.empire-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.provinces-container {
+    margin-top: 20px;
+    flex: 1;
+    /* Fill the remaining space to push buttons down */
+}
+
+.provinces-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.provinces-header h3 {
+    margin: 0;
+}
+
+.toggle-provinces-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    border-radius: 4px;
+}
+
+.toggle-provinces-btn:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.provinces-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 40vh;
+    /* Exactly maximum 60% of viewport height */
+}
+
+.province-item {
+    padding: 6px 8px;
+    /* Tighter padding for smaller item height */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.province-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.province-stats {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.actions-buttons {
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ally-btn,
+.war-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    flex: 1;
+    /* equal sizing */
+}
+
+.ally-btn {
+    background-color: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    color: #6ee7b7;
+}
+
+.ally-btn:hover {
+    background-color: rgba(16, 185, 129, 0.4);
+}
+
+.war-btn {
+    background-color: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fca5a5;
+}
+
+.war-btn:hover {
+    background-color: rgba(239, 68, 68, 0.4);
+}
