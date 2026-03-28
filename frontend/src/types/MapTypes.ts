@@ -1,27 +1,37 @@
-export class ProvinceInterface {
+export interface ProvinceInterface {
     id: string;
     arable_land: string;
     pops: string;
+}
 
-    constructor(id: string, arable_land: string, pops: string) {
-        this.id = id;
-        this.arable_land = arable_land;
-        this.pops = pops;
+export interface Empire {
+    id: string;
+    name: string;
+    color: string;
+    provinces: ProvinceInterface[];
+    isAI: boolean;
+    manpower: number;
+    supplyLimit: number;
+}
+
+
+export interface ArmiesInterface {
+    id: string;
+    name: string;
+    strength: number;
+    location: string;
+    owner: string;
+}
+
+export function getArmyShow(army: ArmiesInterface): { form: string, number: number } {
+    if (army.strength < 1e6) {
+        return { form: "circle", number: army.strength / 1e3 };
     }
 
-    toString(): string {
-        return `Province: ${this.id}, Arable Land: ${this.arable_land}, Pops: ${this.pops}`;
-    }
+    return { form: "rectangle", number: army.strength / 1e6 };
+}
 
-    getArableLand(): number {
-        return Number(this.arable_land);
-    }
 
-    getPops(): number {
-        return Number(this.pops);
-    }
-
-    getId(): string {
-        return this.id;
-    }
+export interface MapAdjacencyList {
+    adj: Record<string, string[]>;
 }

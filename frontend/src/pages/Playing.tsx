@@ -75,9 +75,21 @@ const Playing = () => {
 
             console.log("Right Clicked Region:", regionId);
 
-            useDesignStore.getState().setSelectedEmpire(useGameStore.getState().getCountryInProvince(regionId));
-            useDesignStore.getState().setMenuMode("EMPIRE");
-            useDesignStore.getState().toggleMenu(true);
+            const isMovingArmy = useDesignStore.getState().isMovingArmy;
+
+            if (isMovingArmy) {
+                // TODO: Move the army to the selected province
+                /// for now it will be a normal move, make sure to add restrictional logic
+                useGameStore.getState().moveArmy(isMovingArmy, regionId);
+
+                useDesignStore.getState().setisMovingArmy(null);
+                useDesignStore.getState().setSelectedProvince(null);
+            } else {
+                useDesignStore.getState().setSelectedEmpire(useGameStore.getState().getCountryInProvince(regionId));
+                useDesignStore.getState().setMenuMode("EMPIRE");
+                useDesignStore.getState().toggleMenu(true);
+            }
+
         } else {
             console.log("Right Clicked on: ", target);
 

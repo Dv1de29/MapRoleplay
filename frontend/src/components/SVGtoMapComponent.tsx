@@ -1,10 +1,19 @@
 import { useEffect } from "react";
 
 import { useGameStore } from "../store/GameStore";
+import { useDesignStore } from "../store/DesignStore";
+import { useAdjacencyDebugger } from "../utils/tempHookProvince";
+import ArmyMarker from "./ArmyPainter";
 
 
 function SVGtoMapComponent({ svg }: { svg: React.ReactNode }) {
 
+    const selectedProvince = useDesignStore((state) => state.selectedProvince);
+    const armies = useGameStore((state) => state.armies);
+
+    // useAdjacencyDebugger(selectedProvince)
+
+    ///coloring the map
     useEffect(() => {
         const initialState = useGameStore.getState();
         const initialOwners = initialState.provinceOwners;
@@ -56,11 +65,13 @@ function SVGtoMapComponent({ svg }: { svg: React.ReactNode }) {
         return () => unsubscribe();
     }, [svg])
 
-
     return (
         <>
             <div className="svg-map-wrapper" style={{ width: '100%', height: '100%' }}>
                 {svg}
+                {Object.keys(armies).map(armyId => (
+                    <ArmyMarker key={armyId} armyId={armyId} />
+                ))}
             </div>
         </>
     )

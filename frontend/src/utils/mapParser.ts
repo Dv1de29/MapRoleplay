@@ -1,5 +1,5 @@
-import { type Empire } from '../store/GameStore';
-import { ProvinceInterface } from '../types/MapTypes';
+
+import type { Empire, ProvinceInterface } from '../types/MapTypes';
 
 export function parseMapOwners(csvText: string): {
     empires: Record<string, Empire>;
@@ -26,7 +26,9 @@ export function parseMapOwners(csvText: string): {
                 name: label.trim(),
                 color: color.trim(),
                 provinces: [],
-                isAI: true
+                isAI: true,
+                manpower: 0,
+                supplyLimit: 0
             };
         }
 
@@ -61,9 +63,13 @@ export function parseMapProvinces(
         const cleanStateId = stateId.trim();
 
         if (!provinces[cleanStateId]) {
-            const newProvince = new ProvinceInterface(cleanStateId, arable_land.trim(), pops.trim());
+            const newProvince: ProvinceInterface = {
+                id: cleanStateId,
+                arable_land: arable_land.trim(),
+                pops: pops.trim()
+            };
             provinces[cleanStateId] = newProvince;
-            
+
             const ownerId = provinceOwners[cleanStateId];
             if (ownerId && empires[ownerId]) {
                 empires[ownerId].provinces.push(newProvince);

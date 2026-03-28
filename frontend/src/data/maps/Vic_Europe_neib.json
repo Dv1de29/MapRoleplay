@@ -1,0 +1,1612 @@
+{
+    "Yorkshire": [
+        "Lancashire",
+        "Midlands",
+        "Lowlands"
+    ],
+    "Lancashire": [
+        "Yorkshire",
+        "Midlands",
+        "Wales",
+        "Lowlands"
+    ],
+    "Wales": [
+        "Lancashire",
+        "Midlands",
+        "West_Country"
+    ],
+    "Midlands": [
+        "Yorkshire",
+        "Lancashire",
+        "Wales",
+        "Home_Counties",
+        "East_Anglia",
+        "West_Country"
+    ],
+    "Home_Counties": [
+        "Midlands",
+        "East_Anglia",
+        "West_Country"
+    ],
+    "East_Anglia": [
+        "Midlands",
+        "Home_Counties"
+    ],
+    "West_Country": [
+        "Wales",
+        "Midlands",
+        "Home_Counties"
+    ],
+    "Highlands": [
+        "Lowlands"
+    ],
+    "Lowlands": [
+        "Highlands",
+        "Yorkshire",
+        "Lancashire",
+        "Ulster"
+    ],
+    "Ulster": [
+        "Connaught",
+        "Leinster",
+        "Lowlands"
+    ],
+    "Connaught": [
+        "Ulster",
+        "Leinster",
+        "Munster"
+    ],
+    "Leinster": [
+        "Ulster",
+        "Connaught",
+        "Munster"
+    ],
+    "Munster": [
+        "Connaught",
+        "Leinster"
+    ],
+    "Egyptian_Desert": [
+        "Matruh",
+        "Middle_Egypt",
+        "Upper_Egypt",
+        "Libyan_Desert"
+    ],
+    "Matruh": [
+        "Egyptian_Desert",
+        "Lower_Egypt",
+        "Middle_Egypt",
+        "Libyan_Desert",
+        "Libya"
+    ],
+    "Middle_Egypt": [
+        "Egyptian_Desert",
+        "Matruh",
+        "Lower_Egypt",
+        "Upper_Egypt",
+        "Sinai"
+    ],
+    "Upper_Egypt": [
+        "Egyptian_Desert",
+        "Middle_Egypt"
+    ],
+    "Lower_Egypt": [
+        "Matruh",
+        "Middle_Egypt",
+        "Sinai"
+    ],
+    "Sinai": [
+        "Lower_Egypt",
+        "Middle_Egypt",
+        "Palestine",
+        "Transjordan"
+    ],
+    "Cyprus": [],
+    "Malta": [],
+    "West_Prussia": [
+        "East_Prussia",
+        "Pomerania",
+        "Posen",
+        "Mazovia"
+    ],
+    "East_Prussia": [
+        "West_Prussia",
+        "Kaunas",
+        "Vilnius",
+        "Mazovia"
+    ],
+    "Posen": [
+        "West_Prussia",
+        "Brandenburg",
+        "Silesia",
+        "Greater_Poland"
+    ],
+    "Silesia": [
+        "Posen",
+        "Brandenburg",
+        "Saxony",
+        "Bohemia",
+        "Moravia",
+        "West_Galicia",
+        "Greater_Poland"
+    ],
+    "Brandenburg": [
+        "Pomerania",
+        "West_Prussia",
+        "Posen",
+        "Silesia",
+        "Saxony",
+        "Anhalt",
+        "Elbe",
+        "Mecklenburg"
+    ],
+    "Pomerania": [
+        "West_Prussia",
+        "Brandenburg",
+        "Mecklenburg"
+    ],
+    "Mecklenburg": [
+        "Pomerania",
+        "Brandenburg",
+        "Elbe",
+        "Schleswig_Holstein"
+    ],
+    "Schleswig_Holstein": [
+        "Mecklenburg",
+        "Elbe",
+        "Jutland"
+    ],
+    "Elbe": [
+        "Schleswig_Holstein",
+        "Mecklenburg",
+        "Anhalt",
+        "Hannover"
+    ],
+    "Hannover": [
+        "Elbe",
+        "Brunswick",
+        "Westphalia",
+        "Friesland"
+    ],
+    "Westphalia": [
+        "Hannover",
+        "Brunswick",
+        "Hesse",
+        "Ruhr",
+        "North_Rhine",
+        "Gelre"
+    ],
+    "Brunswick": [
+        "Hannover",
+        "Elbe",
+        "Anhalt",
+        "Hesse",
+        "Westphalia",
+        "Saxony"
+    ],
+    "Anhalt": [
+        "Elbe",
+        "Brandenburg",
+        "Saxony",
+        "Brunswick"
+    ],
+    "Saxony": [
+        "Brandenburg",
+        "Silesia",
+        "Bohemia",
+        "Franconia",
+        "Anhalt",
+        "Hesse",
+        "Brunswick"
+    ],
+    "Franconia": [
+        "Hesse",
+        "Saxony",
+        "Bohemia",
+        "Bavaria",
+        "Wurttemberg",
+        "Baden"
+    ],
+    "Bavaria": [
+        "Franconia",
+        "Bohemia",
+        "Austria",
+        "Tyrol",
+        "Wurttemberg"
+    ],
+    "Wurttemberg": [
+        "Baden",
+        "Franconia",
+        "Bavaria",
+        "Tyrol",
+        "East_Switzerland"
+    ],
+    "Baden": [
+        "Alsace_Lorraine",
+        "Hesse",
+        "Wurttemberg",
+        "Rhineland",
+        "Franconia"
+    ],
+    "Alsace_Lorraine": [
+        "Rhineland",
+        "Baden",
+        "West_Switzerland",
+        "Franche_Comte",
+        "Lorraine",
+        "Wallonia"
+    ],
+    "Rhineland": [
+        "North_Rhine",
+        "Hesse",
+        "Alsace_Lorraine",
+        "Baden",
+        "Wallonia",
+        "Ruhr"
+    ],
+    "Hesse": [
+        "Westphalia",
+        "Brunswick",
+        "Franconia",
+        "Baden",
+        "Rhineland",
+        "Saxony",
+        "Ruhr"
+    ],
+    "Ruhr": [
+        "Westphalia",
+        "North_Rhine",
+        "Rhineland",
+        "Hesse",
+        "Gelre"
+    ],
+    "North_Rhine": [
+        "Ruhr",
+        "Westphalia",
+        "Hesse",
+        "Rhineland",
+        "Wallonia",
+        "Gelre"
+    ],
+    "Ankara": [
+        "Kastamonu",
+        "Konya",
+        "Erzurum",
+        "Adana",
+        "Trabzon",
+        "Diyarbakir"
+    ],
+    "Konya": [
+        "Ankara",
+        "Hudavendigar",
+        "Aydin",
+        "Adana",
+        "Kastamonu"
+    ],
+    "Kastamonu": [
+        "Ankara",
+        "Konya",
+        "Trabzon",
+        "Hudavendigar"
+    ],
+    "Hudavendigar": [
+        "Kastamonu",
+        "Konya",
+        "Aydin",
+        "Eastern_Thrace"
+    ],
+    "Aydin": [
+        "Hudavendigar",
+        "Konya",
+        "Eastern_Thrace"
+    ],
+    "Eastern_Thrace": [
+        "Western_Thrace",
+        "Northern_Thrace",
+        "Hudavendigar",
+        "Aydin"
+    ],
+    "Trabzon": [
+        "Kastamonu",
+        "Erzurum",
+        "Ankara",
+        "Kars",
+        "Trabzon"
+    ],
+    "Erzurum": [
+        "Trabzon",
+        "Diyarbakir",
+        "Kars",
+        "Armenia",
+        "Ankara"
+    ],
+    "Diyarbakir": [
+        "Erzurum",
+        "Mosul",
+        "Aleppo",
+        "Deir_Ez_Zor",
+        "Urmia",
+        "Ankara",
+        "Adana"
+    ],
+    "Mosul": [
+        "Diyarbakir",
+        "Deir_Ez_Zor",
+        "Urmia"
+    ],
+    "Deir_Ez_Zor": [
+        "Diyarbakir",
+        "Mosul",
+        "Aleppo",
+        "Syria"
+    ],
+    "Aleppo": [
+        "Diyarbakir",
+        "Deir_Ez_Zor",
+        "Syria",
+        "Adana",
+        "Lebanon"
+    ],
+    "Syria": [
+        "Aleppo",
+        "Deir_Ez_Zor",
+        "Lebanon",
+        "Transjordan",
+        "Palestine  "
+    ],
+    "Adana": [
+        "Konya",
+        "Aleppo",
+        "Ankara",
+        "Diyarbakir"
+    ],
+    "Lebanon": [
+        "Syria",
+        "Palestine",
+        "Aleppo"
+    ],
+    "Transjordan": [
+        "Syria",
+        "Palestine",
+        "Sinai"
+    ],
+    "Palestine": [
+        "Lebanon",
+        "Transjordan",
+        "Sinai"
+    ],
+    "Urmia": [
+        "Erzurum",
+        "Armenia",
+        "Mosul",
+        "Diyarbakir"
+    ],
+    "Moldavia": [
+        "Wallachia",
+        "Bessarabia",
+        "East_Galicia",
+        "Northern_Transylvania",
+        "Southern_Transylvania"
+    ],
+    "Wallachia": [
+        "Moldavia",
+        "Dobrudja",
+        "Bulgaria",
+        "Southern_Transylvania",
+        "Northern_Transylvania",
+        "Banat",
+        "Northern_Serbia"
+    ],
+    "Dobrudja": [
+        "Wallachia",
+        "Bulgaria",
+        "Bessarabia"
+    ],
+    "Bulgaria": [
+        "Wallachia",
+        "Dobrudja",
+        "Northern_Thrace",
+        "Northern_Serbia",
+        "Southern_Serbia",
+        "Skopia"
+    ],
+    "Northern_Thrace": [
+        "Bulgaria",
+        "Western_Thrace",
+        "Eastern_Thrace",
+        "Skopia",
+        "Macedonia"
+    ],
+    "Western_Thrace": [
+        "Northern_Thrace",
+        "Eastern_Thrace",
+        "Macedonia"
+    ],
+    "Gotaland": [
+        "Svealand",
+        "Scania",
+        "Eastern_Norway"
+    ],
+    "Svealand": [
+        "Gotaland",
+        "Norrland",
+        "Eastern_Norway",
+        "Aland"
+    ],
+    "Norrland": [
+        "Svealand",
+        "Northern_Norway",
+        "Oulu",
+        "Eastern_Norway"
+    ],
+    "Scania": [
+        "Gotaland",
+        "Zealand"
+    ],
+    "Orleans": [
+        "Ile_De_France",
+        "Champagne",
+        "Burgundy",
+        "Auvergne_Limousin",
+        "Poitou",
+        "Maine_Anjou",
+        "Normandy"
+    ],
+    "Maine_Anjou": [
+        "Normandy",
+        "Ile_De_France",
+        "Orleans",
+        "Poitou",
+        "Brittany"
+    ],
+    "Poitou": [
+        "Maine_Anjou",
+        "Orleans",
+        "Auvergne_Limousin",
+        "Guyenne",
+        "Brittany",
+        "Orleans",
+        "Aquitaine"
+    ],
+    "Guyenne": [
+        "Poitou",
+        "Auvergne_Limousin",
+        "Languedoc",
+        "Aquitaine"
+    ],
+    "Auvergne_Limousin": [
+        "Orleans",
+        "Burgundy",
+        "Rhone",
+        "Languedoc",
+        "Guyenne",
+        "Poitou"
+    ],
+    "Aquitaine": [
+        "Guyenne",
+        "Languedoc",
+        "Navarra",
+        "Aragon",
+        "Poitou"
+    ],
+    "Languedoc": [
+        "Guyenne",
+        "Auvergne_Limousin",
+        "Rhone",
+        "Provence",
+        "Catalonia",
+        "Aragon",
+        "Aquitaine"
+    ],
+    "Rhone": [
+        "Burgundy",
+        "Franche_Comte",
+        "Savoy",
+        "Provence",
+        "Languedoc",
+        "Auvergne_Limousin"
+    ],
+    "Provence": [
+        "Rhone",
+        "Savoy",
+        "Piedmont",
+        "Languedoc"
+    ],
+    "Burgundy": [
+        "Champagne",
+        "Franche_Comte",
+        "Rhone",
+        "Auvergne_Limousin",
+        "Orleans",
+        "Ile_De_France"
+    ],
+    "Savoy": [
+        "Franche_Comte",
+        "West_Switzerland",
+        "Piedmont",
+        "Provence",
+        "Rhone"
+    ],
+    "Franche_Comte": [
+        "Lorraine",
+        "Champagne",
+        "Burgundy",
+        "Rhone",
+        "Savoy",
+        "West_Switzerland",
+        "Alsace_Lorraine"
+    ],
+    "Champagne": [
+        "Picardy",
+        "Lorraine",
+        "Franche_Comte",
+        "Burgundy",
+        "Wallonia",
+        "Ile_De_France"
+    ],
+    "Lorraine": [
+        "Champagne",
+        "Franche_Comte",
+        "Alsace_Lorraine",
+        "Wallonia"
+    ],
+    "Picardy": [
+        "French_Low_Countries",
+        "Champagne",
+        "Ile_De_France",
+        "Normandy"
+    ],
+    "French_Low_Countries": [
+        "Picardy",
+        "Wallonia",
+        "Flanders"
+    ],
+    "Normandy": [
+        "Picardy",
+        "Ile_De_France",
+        "Maine_Anjou",
+        "Brittany",
+        "Orleans"
+    ],
+    "Ile_De_France": [
+        "Picardy",
+        "Champagne",
+        "Orleans",
+        "Maine_Anjou",
+        "Normandy",
+        "Burgundy"
+    ],
+    "Brittany": [
+        "Normandy",
+        "Maine_Anjou",
+        "Poitou"
+    ],
+    "Algiers": [
+        "Oran",
+        "Constantine",
+        "Sahara"
+    ],
+    "Oran": [
+        "Algiers",
+        "Sahara",
+        "Inner_Morocco",
+        "Al_Rif"
+    ],
+    "Sahara": [
+        "Oran",
+        "Algiers",
+        "Constantine",
+        "East_Sahara",
+        "Inner_Morocco"
+    ],
+    "East_Sahara": [
+        "Sahara",
+        "Constantine",
+        "Tunisia",
+        "Tripoli"
+    ],
+    "Tunisia": [
+        "Constantine",
+        "East_Sahara",
+        "Tripoli"
+    ],
+    "Constantine": [
+        "Algiers",
+        "Sahara",
+        "East_Sahara",
+        "Tunisia"
+    ],
+    "Corsica": [
+        "Sardinia"
+    ],
+    "West_Switzerland": [
+        "Alsace_Lorraine",
+        "Franche_Comte",
+        "Savoy",
+        "Piedmont",
+        "Lombardy",
+        "East_Switzerland"
+    ],
+    "East_Switzerland": [
+        "West_Switzerland",
+        "Wurttemberg",
+        "Baden",
+        "Tyrol",
+        "Lombardy",
+        "Piedmont"
+    ],
+    "Bohemia": [
+        "Silesia",
+        "Saxony",
+        "Franconia",
+        "Bavaria",
+        "Austria",
+        "Moravia"
+    ],
+    "Austria": [
+        "Bohemia",
+        "Moravia",
+        "West_Slovakia",
+        "Transdanubia",
+        "Styria",
+        "Tyrol",
+        "Bavaria"
+    ],
+    "Styria": [
+        "Austria",
+        "Transdanubia",
+        "Slovenia",
+        "South_Tyrol",
+        "Tyrol",
+        "Istria",
+        "Venetia"
+    ],
+    "Slovenia": [
+        "Styria",
+        "Croatia",
+        "Istria",
+        "Transdanubia"
+    ],
+    "Transdanubia": [
+        "Austria",
+        "Central_Hungary",
+        "Slavonia",
+        "Croatia",
+        "Styria",
+        "West_Slovakia"
+    ],
+    "Moravia": [
+        "Bohemia",
+        "Austria",
+        "West_Slovakia",
+        "West_Galicia",
+        "Silesia"
+    ],
+    "Tyrol": [
+        "Bavaria",
+        "Austria",
+        "Styria",
+        "South_Tyrol",
+        "East_Switzerland",
+        "Wurttemberg"
+    ],
+    "South_Tyrol": [
+        "Tyrol",
+        "Styria",
+        "Venetia",
+        "Lombardy",
+        "East_Switzerland"
+    ],
+    "Croatia": [
+        "Transdanubia",
+        "Slavonia",
+        "Bosnia",
+        "Dalmatia",
+        "Istria",
+        "Slovenia"
+    ],
+    "Istria": [
+        "Slovenia",
+        "Croatia",
+        "Venetia",
+        "Styria"
+    ],
+    "West_Slovakia": [
+        "Moravia",
+        "East_Slovakia",
+        "Central_Hungary",
+        "Transdanubia",
+        "Austria",
+        "West_Galicia"
+    ],
+    "Central_Hungary": [
+        "West_Slovakia",
+        "East_Slovakia",
+        "Bekes",
+        "Delvidek",
+        "Slavonia",
+        "Transdanubia",
+        "Banat"
+    ],
+    "East_Slovakia": [
+        "West_Slovakia",
+        "West_Galicia",
+        "East_Galicia",
+        "Northern_Transylvania",
+        "Bekes",
+        "Central_Hungary"
+    ],
+    "West_Galicia": [
+        "Silesia",
+        "Moravia",
+        "East_Slovakia",
+        "East_Galicia",
+        "Lesser_Poland",
+        "Greater_Poland",
+        "West_Slovakia"
+    ],
+    "East_Galicia": [
+        "West_Galicia",
+        "East_Slovakia",
+        "Northern_Transylvania",
+        "Moldavia",
+        "Volhynia",
+        "Bessarabia",
+        "Lesser_Poland",
+        "Kiev"
+    ],
+    "Bekes": [
+        "Central_Hungary",
+        "East_Slovakia",
+        "Northern_Transylvania",
+        "Southern_Transylvania",
+        "Banat",
+        "Delvidek"
+    ],
+    "Northern_Transylvania": [
+        "East_Slovakia",
+        "East_Galicia",
+        "Moldavia",
+        "Southern_Transylvania",
+        "Bekes",
+        "Wallachia"
+    ],
+    "Southern_Transylvania": [
+        "Northern_Transylvania",
+        "Wallachia",
+        "Banat",
+        "Bekes"
+    ],
+    "Banat": [
+        "Bekes",
+        "Southern_Transylvania",
+        "Wallachia",
+        "Northern_Serbia",
+        "Delvidek",
+        "Central_Hungary"
+    ],
+    "Delvidek": [
+        "Central_Hungary",
+        "Transdanubia",
+        "Bekes",
+        "Banat",
+        "Northern_Serbia",
+        "Slavonia"
+    ],
+    "Slavonia": [
+        "Transdanubia",
+        "Delvidek",
+        "Northern_Serbia",
+        "Bosnia",
+        "Croatia"
+    ],
+    "Dalmatia": [
+        "Croatia",
+        "Bosnia",
+        "Montenegro"
+    ],
+    "Bosnia": [
+        "Slavonia",
+        "Northern_Serbia",
+        "Montenegro",
+        "Dalmatia",
+        "Croatia"
+    ],
+    "Southern_Serbia": [
+        "Northern_Serbia",
+        "Bosnia",
+        "Montenegro",
+        "Albania",
+        "Skopia",
+        "Bulgaria"
+    ],
+    "Skopia": [
+        "Southern_Serbia",
+        "Albania",
+        "Macedonia",
+        "Bulgaria",
+        "Northern_Thrace"
+    ],
+    "Northern_Serbia": [
+        "Banat",
+        "Delvidek",
+        "Slavonia",
+        "Bosnia",
+        "Southern_Serbia",
+        "Wallachia",
+        "Bulgaria"
+    ],
+    "Montenegro": [
+        "Bosnia",
+        "Southern_Serbia",
+        "Albania",
+        "Dalmatia"
+    ],
+    "Albania": [
+        "Montenegro",
+        "Southern_Serbia",
+        "Skopia",
+        "Macedonia",
+        "Thessalia"
+    ],
+    "Peloponnese": [
+        "Attica",
+        "Crete"
+    ],
+    "Attica": [
+        "Peloponnese",
+        "Thessalia",
+        "West_Aegean_Islands"
+    ],
+    "Thessalia": [
+        "Attica",
+        "Macedonia",
+        "Albania"
+    ],
+    "Macedonia": [
+        "Thessalia",
+        "Albania",
+        "Skopia",
+        "Western_Thrace"
+    ],
+    "Crete": [
+        "Peloponnese",
+        "West_Aegean_Islands"
+    ],
+    "West_Aegean_Islands": [
+        "Attica",
+        "East_Aegean_Islands",
+        "Crete"
+    ],
+    "East_Aegean_Islands": [
+        "West_Aegean_Islands"
+    ],
+    "Gotland": [],
+    "Aland": [
+        "Svealand",
+        "Uusimaa"
+    ],
+    "Beira": [
+        "Galicia",
+        "Castile",
+        "Estremadura",
+        "Alentejo",
+        "Badajoz"
+    ],
+    "Estremadura": [
+        "Beira",
+        "Alentejo"
+    ],
+    "Alentejo": [
+        "Beira",
+        "Estremadura",
+        "Badajoz",
+        "Andalusia"
+    ],
+    "Madeira": [],
+    "Western_Norway": [
+        "Eastern_Norway",
+        "Northern_Norway"
+    ],
+    "Eastern_Norway": [
+        "Western_Norway",
+        "Northern_Norway",
+        "Svealand",
+        "Gotaland",
+        "Norrland"
+    ],
+    "Northern_Norway": [
+        "Western_Norway",
+        "Eastern_Norway",
+        "Norrland",
+        "Kola",
+        "Oulu"
+    ],
+    "Asturias": [
+        "Galicia",
+        "Castile",
+        "Navarra"
+    ],
+    "Castile": [
+        "Asturias",
+        "Galicia",
+        "Beira",
+        "Toledo",
+        "Aragon",
+        "Navarra",
+        "Badajoz"
+    ],
+    "Galicia": [
+        "Asturias",
+        "Castile",
+        "Beira"
+    ],
+    "Aragon": [
+        "Castile",
+        "Navarra",
+        "Catalonia",
+        "Valencia",
+        "Toledo",
+        "Aquitaine",
+        "Languedoc"
+    ],
+    "Navarra": [
+        "Asturias",
+        "Castile",
+        "Aragon",
+        "Aquitaine",
+        "Languedoc"
+    ],
+    "Catalonia": [
+        "Aragon",
+        "Valencia",
+        "Languedoc"
+    ],
+    "Toledo": [
+        "Castile",
+        "Aragon",
+        "Valencia",
+        "Badajoz",
+        "Andalusia",
+        "Granada"
+    ],
+    "Valencia": [
+        "Catalonia",
+        "Aragon",
+        "Toledo",
+        "Andalusia",
+        "Baleares",
+        "Granada"
+    ],
+    "Badajoz": [
+        "Toledo",
+        "Andalusia",
+        "Alentejo",
+        "Beira",
+        "Castile"
+    ],
+    "Andalusia": [
+        "Badajoz",
+        "Toledo",
+        "Valencia",
+        "Granada",
+        "Alentejo"
+    ],
+    "Granada": [
+        "Andalusia",
+        "Valencia",
+        "Al_Rif",
+        "Toledo"
+    ],
+    "Canary_Islands": [],
+    "Baleares": [
+        "Valencia"
+    ],
+    "Al_Rif": [
+        "Fez",
+        "Granada",
+        "Inner_Morocco",
+        "Oran"
+    ],
+    "Gelre": [
+        "Friesland",
+        "Holland",
+        "Westphalia",
+        "North_Rhine",
+        "Flanders",
+        "Ruhr"
+    ],
+    "Friesland": [
+        "Gelre",
+        "Holland",
+        "Hannover"
+    ],
+    "Holland": [
+        "Friesland",
+        "Gelre",
+        "Flanders"
+    ],
+    "Flanders": [
+        "Holland",
+        "Gelre",
+        "Wallonia",
+        "French_Low_Countries"
+    ],
+    "Wallonia": [
+        "Flanders",
+        "French_Low_Countries",
+        "Rhineland",
+        "North_Rhine",
+        "Lorraine",
+        "Champagne",
+        "Alsace_Lorraine"
+    ],
+    "Zealand": [
+        "Jutland",
+        "Scania"
+    ],
+    "Jutland": [
+        "Zealand",
+        "Schleswig_Holstein"
+    ],
+    "Greenland": [],
+    "Yaroslavl": [
+        "Moscow",
+        "Galich",
+        "Tver",
+        "Vologda",
+        "Nizhny_Novgorod",
+        "Novgorod",
+        "Ryazan"
+    ],
+    "Moscow": [
+        "Yaroslavl",
+        "Tver",
+        "Smolensk",
+        "Oryol",
+        "Ryazan",
+        "Nizhny_Novgorod"
+    ],
+    "Oryol": [
+        "Moscow",
+        "Smolensk",
+        "Chernihiv",
+        "Kursk",
+        "Tambov",
+        "Ryazan"
+    ],
+    "Kursk": [
+        "Oryol",
+        "Chernihiv",
+        "Kharkov",
+        "Tambov",
+        "Rostov"
+    ],
+    "Tartaria": [
+        "Nizhny_Novgorod",
+        "Kazan",
+        "Samara",
+        "Tambov",
+        "Rostov",
+        "Astrakhan",
+        "Chuvashia"
+    ],
+    "Tambov": [
+        "Ryazan",
+        "Tartaria",
+        "Rostov",
+        "Kursk",
+        "Nizhny_Novgorod",
+        "Chuvashia"
+    ],
+    "Ryazan": [
+        "Moscow",
+        "Oryol",
+        "Tambov",
+        "Nizhny_Novgorod",
+        "Nizhny_Novgorod",
+        "Yaroslavl"
+    ],
+    "Rostov": [
+        "Tambov",
+        "Astrakhan",
+        "Kalmykia",
+        "Stavropol",
+        "Kuban",
+        "Kharkov",
+        "Taurida",
+        "Kursk",
+        "Tartaria"
+    ],
+    "Nizhny_Novgorod": [
+        "Moscow",
+        "Yaroslavl",
+        "Galich",
+        "Ryazan",
+        "Chuvashia",
+        "Tambov"
+    ],
+    "Galich": [
+        "Yaroslavl",
+        "Nizhny_Novgorod",
+        "Vyatka",
+        "Perm",
+        "Nenetsia",
+        "Novgorod",
+        "Arkhangelsk"
+    ],
+    "Chuvashia": [
+        "Kazan",
+        "Nizhny_Novgorod",
+        "Vyatka",
+        "Galich",
+        "Tambov",
+        "Tartaria"
+    ],
+    "Kazan": [
+        "Vyatka",
+        "Ufa",
+        "Samara",
+        "Tartaria",
+        "Chuvashia"
+    ],
+    "Samara": [
+        "Kazan",
+        "Ufa",
+        "Tartaria"
+    ],
+    "Ufa": [
+        "Kazan",
+        "Vyatka",
+        "Perm",
+        "Samara"
+    ],
+    "Vyatka": [
+        "Galich",
+        "Perm",
+        "Ufa",
+        "Kazan",
+        "Chuvashia"
+    ],
+    "Perm": [
+        "Vyatka",
+        "Ufa",
+        "Galich"
+    ],
+    "Nenetsia": [
+        "Arkhangelsk",
+        "Galich"
+    ],
+    "Arkhangelsk": [
+        "Nenetsia",
+        "East_Karelia",
+        "Vologda",
+        "Galich",
+        "Novgorod"
+    ],
+    "East_Karelia": [
+        "Arkhangelsk",
+        "Kola",
+        "Kuopio",
+        "West_Karelia",
+        "Novgorod",
+        "Oulu",
+        "Ingria"
+    ],
+    "Novgorod": [
+        "East_Karelia",
+        "West_Karelia",
+        "Ingria",
+        "Pskov",
+        "Tver",
+        "Vologda",
+        "Arkhangelsk",
+        "Yaroslavl",
+        "Galich"
+    ],
+    "Tver": [
+        "Novgorod",
+        "Pskov",
+        "Smolensk",
+        "Moscow",
+        "Yaroslavl"
+    ],
+    "Smolensk": [
+        "Tver",
+        "Pskov",
+        "Vitebsk",
+        "Mogilev",
+        "Chernihiv",
+        "Oryol",
+        "Moscow"
+    ],
+    "Oulu": [
+        "Kuopio",
+        "Ostrobothnia",
+        "Kola",
+        "Norrland",
+        "Northern_Norway",
+        "East_Karelia"
+    ],
+    "Kuopio": [
+        "Oulu",
+        "Ostrobothnia",
+        "Uusimaa",
+        "West_Karelia",
+        "East_Karelia"
+    ],
+    "Kola": [
+        "East_Karelia",
+        "Oulu",
+        "Northern_Norway"
+    ],
+    "Ostrobothnia": [
+        "Oulu",
+        "Kuopio",
+        "Uusimaa"
+    ],
+    "Uusimaa": [
+        "Ostrobothnia",
+        "Kuopio",
+        "West_Karelia",
+        "Aland"
+    ],
+    "West_Karelia": [
+        "Uusimaa",
+        "Kuopio",
+        "East_Karelia",
+        "Novgorod",
+        "Ingria"
+    ],
+    "Ingria": [
+        "West_Karelia",
+        "Novgorod",
+        "Pskov",
+        "Talinn",
+        "Tartu",
+        "East_Karelia"
+    ],
+    "Pskov": [
+        "Ingria",
+        "Novgorod",
+        "Tver",
+        "Smolensk",
+        "Vitebsk",
+        "Riga",
+        "Tartu"
+    ],
+    "Riga": [
+        "Pskov",
+        "Vitebsk",
+        "Courland",
+        "Tartu"
+    ],
+    "Tartu": [
+        "Talinn",
+        "Ingria",
+        "Pskov",
+        "Riga"
+    ],
+    "Talinn": [
+        "Tartu",
+        "Ingria"
+    ],
+    "Courland": [
+        "Riga",
+        "Kaunas"
+    ],
+    "Kaunas": [
+        "Courland",
+        "Vilnius",
+        "East_Prussia"
+    ],
+    "Vilnius": [
+        "Kaunas",
+        "Minsk",
+        "Mogilev",
+        "Brest",
+        "East_Prussia",
+        "Mazovia"
+    ],
+    "Brest": [
+        "Vilnius",
+        "Minsk",
+        "Volhynia",
+        "Mazovia",
+        "Lesser_Poland",
+        "Vitebsk"
+    ],
+    "Mazovia": [
+        "East_Prussia",
+        "West_Prussia",
+        "Greater_Poland",
+        "Lesser_Poland",
+        "Brest",
+        "Vilnius"
+    ],
+    "Lesser_Poland": [
+        "Mazovia",
+        "Greater_Poland",
+        "Silesia",
+        "West_Galicia",
+        "Volhynia",
+        "Brest"
+    ],
+    "Greater_Poland": [
+        "Posen",
+        "West_Prussia",
+        "Mazovia",
+        "Lesser_Poland",
+        "Silesia",
+        "West_Galicia"
+    ],
+    "Minsk": [
+        "Vilnius",
+        "Mogilev",
+        "Volhynia",
+        "Brest",
+        "Chernihiv",
+        "Kiev",
+        "Vitebsk"
+    ],
+    "Mogilev": [
+        "Vitebsk",
+        "Smolensk",
+        "Chernihiv",
+        "Kiev",
+        "Volhynia",
+        "Minsk",
+        "Vilnius"
+    ],
+    "Vitebsk": [
+        "Pskov",
+        "Smolensk",
+        "Mogilev",
+        "Riga",
+        "Minsk",
+        "Brest"
+    ],
+    "Volhynia": [
+        "Brest",
+        "Minsk",
+        "Kiev",
+        "East_Galicia",
+        "Lesser_Poland"
+    ],
+    "Kiev": [
+        "Mogilev",
+        "Chernihiv",
+        "Kharkov",
+        "Cherson",
+        "Volhynia",
+        "Bessarabia",
+        "Minsk",
+        "East_Galicia"
+    ],
+    "Cherson": [
+        "Kiev",
+        "Kharkov",
+        "Taurida",
+        "Bessarabia"
+    ],
+    "Bessarabia": [
+        "Cherson",
+        "Dobrudja",
+        "Moldavia",
+        "Kiev"
+    ],
+    "Taurida": [
+        "Cherson",
+        "Kharkov",
+        "Rostov",
+        "Crimea"
+    ],
+    "Crimea": [
+        "Taurida",
+        "Kuban"
+    ],
+    "Kuban": [
+        "Rostov",
+        "Stavropol",
+        "North_Caucasus",
+        "Crimea",
+        "Greater_Caucasus"
+    ],
+    "Stavropol": [
+        "Kuban",
+        "Rostov",
+        "Kalmykia",
+        "Dagestan",
+        "North_Caucasus"
+    ],
+    "North_Caucasus": [
+        "Kuban",
+        "Stavropol",
+        "Greater_Caucasus",
+        "Dagestan"
+    ],
+    "Greater_Caucasus": [
+        "North_Caucasus",
+        "Dagestan",
+        "Elizavetpol",
+        "Armenia",
+        "Kars",
+        "Kuban"
+    ],
+    "Kars": [
+        "Greater_Caucasus",
+        "Armenia",
+        "Erzurum",
+        "Trabzon"
+    ],
+    "Armenia": [
+        "Kars",
+        "Greater_Caucasus",
+        "Elizavetpol",
+        "Azerbaijan",
+        "Urmia",
+        "Erzurum"
+    ],
+    "Elizavetpol": [
+        "Greater_Caucasus",
+        "Dagestan",
+        "Azerbaijan",
+        "Armenia"
+    ],
+    "Azerbaijan": [
+        "Elizavetpol",
+        "Dagestan",
+        "Armenia"
+    ],
+    "Dagestan": [
+        "Stavropol",
+        "Kalmykia",
+        "Elizavetpol",
+        "Azerbaijan",
+        "Greater_Caucasus",
+        "North_Caucasus"
+    ],
+    "Kalmykia": [
+        "Rostov",
+        "Astrakhan",
+        "Dagestan",
+        "Stavropol"
+    ],
+    "Astrakhan": [
+        "Rostov",
+        "Kalmykia",
+        "Tartaria"
+    ],
+    "Kharkov": [
+        "Chernihiv",
+        "Kursk",
+        "Rostov",
+        "Taurida",
+        "Cherson",
+        "Kiev"
+    ],
+    "Chernihiv": [
+        "Smolensk",
+        "Oryol",
+        "Kursk",
+        "Kharkov",
+        "Kiev",
+        "Mogilev",
+        "Minsk"
+    ],
+    "Libya": [
+        "Tripoli",
+        "Libyan_Desert",
+        "Matruh"
+    ],
+    "Libyan_Desert": [
+        "Libya",
+        "Tripoli",
+        "Matruh",
+        "Egyptian_Desert"
+    ],
+    "Tripoli": [
+        "Libya",
+        "Libyan_Desert",
+        "Tunisia",
+        "East_Sahara"
+    ],
+    "Apulia": [
+        "Campania",
+        "Abruzzo"
+    ],
+    "Abruzzo": [
+        "Apulia",
+        "Campania",
+        "Lazio",
+        "Umbria"
+    ],
+    "Lazio": [
+        "Abruzzo",
+        "Campania",
+        "Umbria",
+        "Tuscany"
+    ],
+    "Umbria": [
+        "Abruzzo",
+        "Lazio",
+        "Tuscany",
+        "Romagna"
+    ],
+    "Tuscany": [
+        "Lazio",
+        "Umbria",
+        "Romagna",
+        "Emilia"
+    ],
+    "Romagna": [
+        "Umbria",
+        "Tuscany",
+        "Emilia",
+        "Venetia"
+    ],
+    "Lombardy": [
+        "Piedmont",
+        "Emilia",
+        "Venetia",
+        "East_Switzerland",
+        "South_Tyrol"
+    ],
+    "Emilia": [
+        "Tuscany",
+        "Romagna",
+        "Lombardy",
+        "Venetia",
+        "Piedmont"
+    ],
+    "Piedmont": [
+        "Lombardy",
+        "Emilia",
+        "Savoy",
+        "Provence",
+        "East_Switzerland",
+        "West_Switzerland"
+    ],
+    "Venetia": [
+        "Lombardy",
+        "Emilia",
+        "South_Tyrol",
+        "Tyrol",
+        "Slovenia",
+        "Istria",
+        "Romagna",
+        "Styria"
+    ],
+    "Calabria": [
+        "Campania",
+        "Apulia",
+        "Sicily"
+    ],
+    "Campania": [
+        "Lazio",
+        "Abruzzo",
+        "Apulia",
+        "Calabria"
+    ],
+    "Sicily": [
+        "Calabria"
+    ],
+    "Sardinia": [
+        "Corsica"
+    ],
+    "Iceland": [],
+    "Fez": [
+        "Al_Rif",
+        "Inner_Morocco",
+        "Marrakech"
+    ],
+    "Marrakech": [
+        "Fez",
+        "Inner_Morocco"
+    ],
+    "Inner_Morocco": [
+        "Fez",
+        "Marrakech",
+        "Oran",
+        "Sahara"
+    ]
+}

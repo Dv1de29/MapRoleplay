@@ -1,18 +1,14 @@
 import { create } from 'zustand';
 
 import type { PlayerInterface } from '../types/LobbyTypes';
-import { ProvinceInterface } from '../types/MapTypes';
+import type { ProvinceInterface, ArmiesInterface, MapAdjacencyList, Empire } from '../types/MapTypes';
+import { useDesignStore } from './DesignStore';
+import { getPopulationString, parsePopString } from '../utils/utils';
 
 // --- TYPES ---
 export type GamePhase = 'MAIN_MENU' | 'LOBBY' | 'PLAYING';
 
-export interface Empire {
-    id: string;
-    name: string;
-    color: string;
-    provinces: ProvinceInterface[];
-    isAI: boolean; // Crucial for when we hook up WebLLM later!
-}
+
 
 interface GameState {
     // 1. Networking State
@@ -35,8 +31,12 @@ interface GameState {
     provinceOwners: Record<string, string | null>;
     provinces: Record<string, ProvinceInterface>;
 
+    adjacencies: MapAdjacencyList;
+    armies: Record<string, ArmiesInterface>;
+
     empiresAlliance: Record<string, string[]>
 
+    empiresWars: Record<string, string[]>
 }
 
 interface GameActions {
@@ -53,7 +53,8 @@ interface GameActions {
 
     // Game Engine Actions
     setProvinceOwner: (provinceId: string, empireId: string | null) => void;
-    initGameState: (empires: Record<string, Empire>, initialOwners: Record<string, string>, provinces: Record<string, ProvinceInterface>) => void;
+    initGameState: (empires: Record<string, Empire>, initialOwners: Record<string, string>, provinces: Record<string, ProvinceInterface>, adjacencies: MapAdjacencyList, armies: Record<string, ArmiesInterface>) => void;
+    recalculateCountryStats: () => void;
 
 
     // Utility Actions
@@ -71,6 +72,7 @@ interface GameActions {
     getCountryInProvince: (provinceId: string) => string | null;
     getTotalPopulation: (empireId: string) => number;
     getAverageArableLand: (empireId: string) => number;
+    getTotalArableLand: (empireId: string) => number;
 
 
     ///aliances
@@ -78,6 +80,18 @@ interface GameActions {
     dissolveAlliance: (empire1: string, empire2: string) => void
     getAlliances: (empire1: string) => string[]
     isAllied: (empire1: string, empire2: string) => boolean,
+
+    //wars
+    setWar: (empire1: string, empire2: string) => void,
+    removeWar: (empire1: string, empire2: string) => void,
+    isAtWar: (empire1: string, empire2: string) => boolean,
+
+    /// armies
+    spawnArmy: (provinceId: string, strength: number) => void,
+    modifyArmy: (armyId: string, newArmy: ArmiesInterface) => void,
+    removeArmy: (armyId: string) => void,
+
+    moveArmy: (armyId: string, targetProvinceId: string) => void,
 }
 
 export const useGameStore = create<GameState & GameActions>((set, get) => ({
@@ -100,7 +114,11 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
     provinceOwners: {},
     provinces: {},
 
+    adjacencies: { adj: {} },
+    armies: {},
+
     empiresAlliance: {},
+    empiresWars: {},
 
 
     ////hard reset of the state:
@@ -123,6 +141,9 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
             empires: {},
             provinceOwners: {},
             provinces: {},
+
+            adjacencies: { adj: {} },
+            armies: {},
 
             empiresAlliance: {},
         })
@@ -158,6 +179,8 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
     },
 
     leaveGame: () => {
+        useDesignStore.getState().resetDesign();
+
         set({ gamePhase: 'MAIN_MENU', roomCode: null, isHost: false, localPlayerId: null, players: [], playerCountries: {} });
     },
 
@@ -202,12 +225,54 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
     // --- GAME ENGINE ACTIONS ---
 
     // Call this when the game officially transitions from LOBBY to PLAYING
-    initGameState: (empires, initialOwners, provinces) => {
+    initGameState: (empires, initialOwners, provinces, adjacencies, armies) => {
         set({
             empires: empires,
             provinceOwners: initialOwners,
-            provinces: provinces
+            provinces: provinces,
+            adjacencies: adjacencies,
+            armies: armies
         });
+        get().recalculateCountryStats();
+    },
+
+    recalculateCountryStats: () => {
+        const { empires, provinces, provinceOwners } = get();
+        const updatedEmpires = { ...empires };
+
+        // Reset stats
+        for (const empireId of Object.keys(updatedEmpires)) {
+            updatedEmpires[empireId] = {
+                ...updatedEmpires[empireId],
+                manpower: 0,
+                supplyLimit: 0
+            };
+        }
+
+        // Calculate based on provinces
+        for (const [provinceId, ownerId] of Object.entries(provinceOwners)) {
+            if (ownerId && updatedEmpires[ownerId] && provinces[provinceId]) {
+                const popString = provinces[provinceId].pops || "0";
+                const lastChar = popString.slice(-1).toUpperCase();
+
+                let popNum = 0;
+                if (lastChar === 'K') {
+                    popNum = Number(popString.slice(0, -1)) * 1000;
+                } else if (lastChar === 'M') {
+                    popNum = Number(popString.slice(0, -1)) * 1000000;
+                } else {
+                    popNum = Number(popString);
+                }
+
+                const arableLand = Number(provinces[provinceId].arable_land || 0);
+
+                // Add to empire
+                updatedEmpires[ownerId].manpower += Math.floor(popNum * 0.05); // 5% conscription
+                updatedEmpires[ownerId].supplyLimit += arableLand * 1000;      // 1000 per arable land
+            }
+        }
+
+        set({ empires: updatedEmpires });
     },
 
     // Call this when an army conquers a province!
@@ -309,6 +374,23 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
         return provinceCount > 0 ? totalArableLand / provinceCount : 0;
     },
 
+    getTotalArableLand: (empireId) => {
+        if (!empireId) return 0;
+
+        const provinces = get().provinces;
+        const provinceOwners = get().provinceOwners;
+
+        let totalArableLand = 0;
+
+        for (const [provinceId, ownerId] of Object.entries(provinceOwners)) {
+            if (ownerId === empireId) {
+                totalArableLand += Number(provinces[provinceId].arable_land);
+            }
+        }
+
+        return totalArableLand;
+    },
+
 
     ///aliances
     setAlliance: (empire1, empire2) => {
@@ -353,5 +435,210 @@ export const useGameStore = create<GameState & GameActions>((set, get) => ({
         const empiresAlliance = get().empiresAlliance;
         if (!empiresAlliance[empire1]) return false;
         return empiresAlliance[empire1].includes(empire2);
-    }
+    },
+
+
+    ///wars
+    setWar: (empire1, empire2) => {
+        set((state) => {
+            const wars1 = state.empiresWars[empire1] || [];
+            const wars2 = state.empiresWars[empire2] || [];
+
+            const newWars1 = wars1.includes(empire2) ? wars1 : [...wars1, empire2];
+            const newWars2 = wars2.includes(empire1) ? wars2 : [...wars2, empire1];
+
+            return {
+                empiresWars: {
+                    ...state.empiresWars,
+                    [empire1]: newWars1,
+                    [empire2]: newWars2
+                }
+            };
+        });
+    },
+
+    removeWar: (empire1, empire2) => {
+        set((state) => {
+            const wars1 = state.empiresWars[empire1] || [];
+            const wars2 = state.empiresWars[empire2] || [];
+
+            return {
+                empiresWars: {
+                    ...state.empiresWars,
+                    [empire1]: wars1.filter(id => id !== empire2),
+                    [empire2]: wars2.filter(id => id !== empire1)
+                }
+            };
+        });
+    },
+
+    isAtWar: (empire1, empire2) => {
+        const empiresWars = get().empiresWars;
+        if (!empiresWars[empire1]) return false;
+        return empiresWars[empire1].includes(empire2);
+    },
+
+
+    ///armies
+    spawnArmy: (provinceId, armyStrength) => {
+
+        const state = get();
+        const owner = state.provinceOwners[provinceId];
+
+
+        if (!owner) {
+            return;
+        }
+
+        const newOwnerEmpire = { ...state.empires[owner] };
+
+        if (newOwnerEmpire.manpower < armyStrength) {
+            console.log("Not enough Manpower Reserve to spawn army!");
+            return;
+        }
+
+        console.log(newOwnerEmpire.manpower, armyStrength);
+
+        newOwnerEmpire.manpower -= armyStrength;
+
+        const provinces = { ...state.provinces };
+
+        // 1. Gather eligible provinces for proportional taxation
+        const eligibleProvinces: { id: string; popNum: number }[] = [];
+        let totalEligiblePop = 0;
+
+        for (const [id, provOwner] of Object.entries(state.provinceOwners)) {
+            if (provOwner === owner && provinces[id]) {
+                const popNum = parsePopString(provinces[id].pops);
+                // Proportional Taxation logic: ignore tiny provinces entirely
+                if (popNum >= 1000) {
+                    eligibleProvinces.push({ id, popNum });
+                    totalEligiblePop += popNum;
+                }
+            }
+        }
+
+        // Prevent crashes or cheating
+        if (totalEligiblePop < armyStrength) {
+            console.log("Not enough population in eligible provinces to spawn army!");
+            return;
+        }
+
+        // 2. Perform proportional deduction smoothly avoiding decimals
+        let remainingToDeduct = armyStrength;
+
+        // Sort descending so the most populated areas absorb any fractional rounding hits
+        eligibleProvinces.sort((a, b) => b.popNum - a.popNum);
+
+        for (let i = 0; i < eligibleProvinces.length; i++) {
+            const prov = eligibleProvinces[i];
+
+            let deduction = 0;
+            // The last province absorbs the rest of the deduction to avoid fractional loss
+            if (i === eligibleProvinces.length - 1) {
+                deduction = remainingToDeduct;
+            } else {
+                const weight = prov.popNum / totalEligiblePop;
+                deduction = Math.floor(armyStrength * weight);
+            }
+
+            // Final safety catch
+            deduction = Math.min(deduction, remainingToDeduct);
+
+            const newPop = prov.popNum - deduction;
+
+            provinces[prov.id] = {
+                ...provinces[prov.id],
+                pops: getPopulationString(newPop)
+            };
+
+            remainingToDeduct -= deduction;
+            if (remainingToDeduct <= 0) break;
+        }
+
+        // 3. Create army and inject updated provinces back into state
+        set((currentState) => {
+            const newArmy: ArmiesInterface = {
+                id: `army-${Date.now()}`,
+                name: "Army",
+                strength: armyStrength,
+                location: provinceId,
+                owner: owner
+            };
+
+            return {
+                ...currentState,
+                provinces: provinces,
+                armies: {
+                    ...currentState.armies,
+                    [newArmy.id]: newArmy
+                },
+                empires: {
+                    ...currentState.empires,
+                    [owner]: newOwnerEmpire
+                }
+            };
+        });
+
+        // 4. Force recalculation of country stats (manpower drops instantly!)
+        // get().recalculateCountryStats();
+    },
+
+    modifyArmy: (armyId, newArmy) => {
+        set((state) => ({
+            armies: {
+                ...state.armies,
+                [armyId]: newArmy
+            }
+        }));
+    },
+
+    removeArmy: (armyId) => {
+        const army = get().armies[armyId];
+
+        if (!army) {
+            return;
+        }
+
+        set((state) => {
+            const newArmies = { ...state.armies };
+            delete newArmies[armyId];
+            return { armies: newArmies };
+        });
+    },
+
+    moveArmy: (armyId, targetProvinceId) => {
+        const army = get().armies[armyId];
+
+        if (!army) {
+            return;
+        }
+
+        const targetProvince = get().provinces[targetProvinceId];
+        if (!targetProvince) {
+            console.log("Target province not found!")
+            return;
+        }
+
+        const targetOwner = get().provinceOwners[targetProvinceId];
+        if (!targetOwner || targetOwner !== army.owner) {
+            return;
+        }
+
+        set((state) => {
+            const army = state.armies[armyId];
+            if (!army) return state;
+
+            return {
+                armies: {
+                    ...state.armies,
+                    [armyId]: {
+                        ...army,
+                        location: targetProvinceId
+                    }
+                }
+            };
+        });
+    },
+
 }));

@@ -5,6 +5,8 @@ interface DesignState {
     isMenuOpen: boolean;
     isChatOpen: boolean;
 
+    isMovingArmy: string | null;
+
     // In-Game UI Context
     // Moving selectedProvince here is actually a smart optimization!
     // Player 2 doesn't need to know what you are clicking on until you confirm an order.
@@ -18,21 +20,40 @@ interface DesignState {
 }
 
 interface DesignActions {
+    resetDesign: () => void;
+
     toggleMenu: (newValue?: boolean) => void;
     setChatOpen: (isOpen: boolean) => void;
     setSelectedProvince: (id: string | null) => void;
     setSelectedEmpire: (id: string | null) => void;
     setMenuMode: (mode: 'POLITICAL' | 'CHAT' | 'ALLIANCE' | 'EMPIRE') => void;
     setMapMode: (mode: 'POLITICAL' | 'ECONOMIC' | 'POPULATION') => void;
+
+    setisMovingArmy: (isMovingArmy: string | null) => void;
 }
 
 export const useDesignStore = create<DesignState & DesignActions>((set) => ({
     isMenuOpen: false,
     isChatOpen: false,
+
+    isMovingArmy: null,
+
     selectedProvince: null,
     selectedEmpire: null,
     menuMode: 'POLITICAL',
     mapMode: 'POLITICAL',
+
+    resetDesign: () => {
+        set({
+            isMenuOpen: false,
+            isChatOpen: false,
+            isMovingArmy: null,
+            selectedProvince: null,
+            selectedEmpire: null,
+            menuMode: 'POLITICAL',
+            mapMode: 'POLITICAL',
+        })
+    },
 
     toggleMenu: (newValue?) => {
         if (!newValue) {
@@ -46,4 +67,5 @@ export const useDesignStore = create<DesignState & DesignActions>((set) => ({
     setSelectedEmpire: (id) => set({ selectedEmpire: id }),
     setMenuMode: (mode) => set({ menuMode: mode }),
     setMapMode: (mode) => set({ mapMode: mode }),
+    setisMovingArmy: (isMovingArmy) => set({ isMovingArmy }),
 }));

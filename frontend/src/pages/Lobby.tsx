@@ -7,7 +7,8 @@ import '../styles/Lobby.css';
 
 import { getLobbyStatusText } from '../utils/LobbyUtils/utils';
 import { parseMapOwners, parseMapProvinces } from '../utils/mapParser';
-
+import type { MapAdjacencyList, ArmiesInterface } from '../types/MapTypes';
+import adjacenciesJson from '../data/maps/Vic_Europe_neib.json';
 
 /// with this we get the csv file for the map
 import { getMapDataFilePath, getMapValueFilePath } from '../utils/LobbyUtils/mapsAvailable';
@@ -40,7 +41,10 @@ const Lobby = () => {
         const { provinces } = parseMapProvinces(csvProvinces, empires, provinceOwners);
         console.log(`Initializing provinces wiht ${provinces}`)
 
-        useGameStore.getState().initGameState(empires, provinceOwners, provinces);
+        const adjData = adjacenciesJson as Record<string, string[]>;
+        const adjacencyList: MapAdjacencyList = { adj: adjData };
+
+        useGameStore.getState().initGameState(empires, provinceOwners, provinces, adjacencyList, {});
     }, [timePeriod]);
 
 

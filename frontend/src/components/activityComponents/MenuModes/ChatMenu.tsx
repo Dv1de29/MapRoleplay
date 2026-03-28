@@ -23,10 +23,8 @@ function ChatMenu() {
     const empires = useGameStore((state) => state.empires);
     const localPlayerEmpireId = useGameStore.getState().getLocalPlayerEmpireId();
 
-    // Get a list of OTHER empires to chat with
     const otherEmpires = Object.values(empires).filter(e => e.id !== localPlayerEmpireId);
 
-    // Default to the first available other empire
     const [activeChatId, setActiveChatId] = useState<string | null>(otherEmpires.length > 0 ? otherEmpires[0].id : null);
 
     // Mock message store keyed by empire ID
@@ -70,9 +68,9 @@ function ChatMenu() {
         if (currentActiveEmpire?.isAI) {
             setIsAITyping(true);
             try {
-                const prompt = `You are the leader of ${currentActiveEmpire.name}. A foreign nation just messaged you: "${messageText}". Reply in character as your nation's leader. Keep it under 2 sentences. Your response MUST be plain text, do NOT use JSON or markdown.`;
+                const prompt = `You are the leader of ${currentActiveEmpire.name}. The nation ${empires[localPlayerEmpireId].name} just sent you a message: "${messageText}". Reply in character as your nation's leader. Keep it under 2 sentences. Your response MUST be plain text, do NOT use JSON or markdown.`;
                 const responseText = await requestAIMove(prompt);
-                
+
                 const aiMessage: ChatMessage = {
                     id: Math.random().toString(36).substr(2, 9),
                     senderId: activeChatId,
